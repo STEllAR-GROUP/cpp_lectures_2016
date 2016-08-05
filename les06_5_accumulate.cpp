@@ -3,6 +3,7 @@
 #include <list>
 #include <string>
 #include <numeric>
+#include <algorithm>
 #include <iterator>
 
 //uses accumulate that takes a function
@@ -21,7 +22,7 @@ int main()
     std::vector<std::string> vs = { "abcdefg", "abc", "decfg", "df"};
     std::cout 
         << std::accumulate(vs.begin(), vs.end(),  
-                std::numeric_limits<int>::max(),
+             std::numeric_limits<int>::max(),
              [](int shortest, std::string s) -> int
              {
                 return (shortest > s.size() ? s.size() : shortest);
